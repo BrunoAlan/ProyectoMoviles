@@ -11,10 +11,10 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.TextInputEditText;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatButton;
+import android.support.v7.widget.AppCompatSpinner;
 import android.view.View;
 import android.widget.ArrayAdapter;
-import android.widget.Button;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.alan.myapplication.Operaciones.ConexionSQLiteHelper;
@@ -28,11 +28,12 @@ public class AgregarAlimento extends AppCompatActivity {
     private TextInputEditText textInputHidratos;
     private TextInputEditText textInputProteinas;
     private TextInputEditText textInputGrasa;
-    private Button btnAgregar;
+    private AppCompatButton btnAgregar;
 
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
+        getSupportActionBar().setTitle("Agregar Alimento");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.agregar_alimento);
 
@@ -44,20 +45,22 @@ public class AgregarAlimento extends AppCompatActivity {
         textInputGrasa=findViewById(R.id.text_input_grasas);
         btnAgregar=findViewById(R.id.btnAgregar);
 
-        Spinner combo_categorias = findViewById(R.id.categorySpinner);
+        final AppCompatSpinner combo_categorias = findViewById(R.id.categorySpinner);
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,R.array.combo_categorias,android.R.layout.simple_spinner_item);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         combo_categorias.setAdapter(adapter);
         //obtengo el elemento del spinner
-        // String asd = combo_categorias.getSelectedItem().toString();
 
-        //Toast.makeText(this, asd, Toast.LENGTH_SHORT).show();
+
+
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {              
-                registrarAlimento();
-                //finish();
+            public void onClick(View v) {
+                final String asd = combo_categorias.getSelectedItem().toString();
+                //Toast.makeText(getApplicationContext(), asd, Toast.LENGTH_SHORT).show();
+                //registrarAlimento();
+                 finish();
             }
         });
 

@@ -75,18 +75,20 @@
         android:layout_height="wrap_content"
         android:text="Categoria"/>
 
-    <Spinner
+    <android.support.v7.widget.AppCompatSpinner
         android:id="@+id/categorySpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
-    <Button
+
+    <android.support.v7.widget.AppCompatButton
         android:id="@+id/btnAgregar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:text="Agregar"/>
+        android:layout_marginTop="1dp"
+        android:text="Agregar"
+        style="@style/Base.Widget.AppCompat.Button.Colored"/>
 
 
 
