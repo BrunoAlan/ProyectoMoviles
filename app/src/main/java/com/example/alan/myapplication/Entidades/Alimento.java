@@ -16,6 +16,7 @@ public class Alimento {
         this.proteinas = proteinas;
         this.grasas = grasas;
         this.categoria = categoria;
+        //
     }
 
     public String getNombre() {
