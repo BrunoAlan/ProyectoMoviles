@@ -50,16 +50,12 @@ public class AgregarAlimento extends AppCompatActivity {
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         combo_categorias.setAdapter(adapter);
         //obtengo el elemento del spinner
-
-
-
+        final String asd = combo_categorias.getSelectedItem().toString();
 
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                final String asd = combo_categorias.getSelectedItem().toString();
-                //Toast.makeText(getApplicationContext(), asd, Toast.LENGTH_SHORT).show();
-                //registrarAlimento();
+                 //registrarAlimento();
                  finish();
             }
         });
