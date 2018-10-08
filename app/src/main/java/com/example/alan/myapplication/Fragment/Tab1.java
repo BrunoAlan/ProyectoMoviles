@@ -42,7 +42,7 @@ public class Tab1 extends Fragment {
 
             Intent intent= new Intent(getActivity(),AgregarAlimento.class);
             startActivity(intent);
-
+//
             }
         });
 
